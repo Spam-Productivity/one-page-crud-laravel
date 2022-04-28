@@ -47,7 +47,7 @@ class CustomerController extends Controller
             'telpon' => 'required|max:255',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
-            'email' => 'required|email:dns|unique:customers',
+            'email' => 'required|email|unique:customers',
             'username' => 'required|unique:customers',
         ]);
 
@@ -101,7 +101,7 @@ class CustomerController extends Controller
             'telpon' => 'required|max:255',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'username' => 'required',
         ]);
 
@@ -120,6 +120,6 @@ class CustomerController extends Controller
     {
         $customer->delete();
 
-        return back()->with('success', 'Data berhasil dihapus');
+        return redirect('/')->with('success', 'Data berhasil dihapus');
     }
 }

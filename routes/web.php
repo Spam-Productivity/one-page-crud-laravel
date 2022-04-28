@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CustomerController::class, 'index'])->name('index');
 Route::post('/store', [CustomerController::class, 'store'])->name('store')->middleware('guest');
-Route::post('/update/{customer:username}', [CustomerController::class, 'update'])->name('update')->middleware('guest');
+Route::put('/update/{customer:username}', [CustomerController::class, 'update'])->name('update')->middleware('guest');
 Route::post('/delete/{customer:username}', [CustomerController::class, 'destroy'])->name('delete')->middleware('guest');
 Route::get('/show/{customer:username}', [CustomerController::class, 'show'])->name('show')->middleware('guest');
